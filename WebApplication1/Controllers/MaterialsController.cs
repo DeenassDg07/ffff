@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyMediator.Types;
 using WebApplication1.CQRS.CommandList;
-using WebApplication1.DB;
+//using WebApplication1.DB;
 
 namespace WebApplication1.Controllers
 {
