@@ -1,27 +1,27 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyMediator.Interfaces;
-using WebApplication1.CQRS.Newstydent;
 using WebApplication1.DB;
 
-namespace WebApplication6.cqrs.Student
+namespace WebApplication1.CQRS.Newstydent
 {
-    public class ListStudentByGroupIndexCommand : IRequest<IEnumerable<StudentDTO>>
+    public class ListStudentGroupNullCommand : IRequest<IEnumerable<StudentDTO>>
     {
+
         public int IndexGroup { get; set; }
-        public class ListStudentByGroupIndexCommandHandler :
-            IRequestHandler<ListStudentByGroupIndexCommand, IEnumerable<StudentDTO>>
+        public class ListStudentGroupNullCommandHandler :
+            IRequestHandler<ListStudentGroupNullCommand, IEnumerable<StudentDTO>>
         {
 
             private readonly Db131025Context db;
-            public ListStudentByGroupIndexCommandHandler(Db131025Context db)
+            public ListStudentGroupNullCommandHandler(Db131025Context db)
             {
                 this.db = db;
             }
-            public async Task<IEnumerable<StudentDTO>> HandleAsync(ListStudentByGroupIndexCommand request,
+            public async Task<IEnumerable<StudentDTO>> HandleAsync(ListStudentGroupNullCommand request,
                 CancellationToken ct = default)
             {
 
-                return await db.Students.Where(s => s.Id == request.IndexGroup).Select(s =>
+                return await db.Students.Where(s => s.IdGroup == null).Select(s =>
                 new StudentDTO
                 {
                     Id = s.Id,
@@ -39,5 +39,6 @@ namespace WebApplication6.cqrs.Student
 
         }
     }
-}
+    
+    }
 
