@@ -36,10 +36,18 @@ namespace WebApplication1.Controllers
 
             return Ok(result);
         }
-        [HttpGet("SrudentGroupNull/{groupNull}")]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> SrudentGroupNull(int groupNull)
+        [HttpGet("SrudentGroupNull")]
+        public async Task<ActionResult<IEnumerable<StudentDTO>>> SrudentGroupNull()
         {
-            var command = new ListStudentGroupNullCommand { IndexGroup = groupNull };
+            var command = new ListStudentGroupNullCommand();
+            var result = await mediator.SendAsync(command);
+
+            return Ok(result);
+        }
+        [HttpGet("ListGroupNoStudent")]
+        public async Task<ActionResult<IEnumerable<GroupDTO>>> ListGroupNoStudent()
+        {
+            var command = new ListGroupNoStudentCommand();
             var result = await mediator.SendAsync(command);
 
             return Ok(result);

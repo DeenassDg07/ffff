@@ -36,7 +36,6 @@ namespace WebApplication6.cqrs.Student
                     IdGroup = s.IdGroup,
                 }).ToListAsync();
             }
-
         }
     }
 }

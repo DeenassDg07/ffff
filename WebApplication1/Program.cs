@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using MyMediator.Extension;
+using MyMediator.Types;
 using Scalar.AspNetCore;
 using System.Reflection;
+using WebApplication1.CQRS.Newstydent;
 using WebApplication1.DB;
 
 public class Program
@@ -39,3 +42,12 @@ public class Program
         app.Run();
     }
 }
+
+
+
+
+
+
+
+
+

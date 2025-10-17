@@ -7,7 +7,6 @@ namespace WebApplication1.CQRS.Newstydent
     public class ListStudentGroupNullCommand : IRequest<IEnumerable<StudentDTO>>
     {
 
-        public int IndexGroup { get; set; }
         public class ListStudentGroupNullCommandHandler :
             IRequestHandler<ListStudentGroupNullCommand, IEnumerable<StudentDTO>>
         {
