@@ -7,5 +7,6 @@
         public string? Title { get; set; }
 
         public int? IdSpecial { get; set; }
+        public int CountGroup { get; set; }
     }
 }
